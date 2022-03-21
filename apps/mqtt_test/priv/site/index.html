@@ -1,0 +1,51 @@
+<html>
+<head>
+	<link rel="stylesheet" href="styles/weather_station.css" />
+	
+    <!-- load fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Tangerine" rel="stylesheet">
+    
+    <!-- a few libraries that we will use -->
+    <!-- a css framework for animations -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+
+    <!-- chart.js for plots -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+    <!-- moment.js for working with dates -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+
+    <!-- our main script, we will look into this later 😉 -->
+	<script src="index.js"></script>
+</head>
+<body>
+    <!-- let's use HTML5 section tags to group -->
+    <!-- related content together instead of using ambiguous div's -->
+	<header>
+		<div class="weatherIcon">
+			<object data="img/weather_icon.svg" type="image/svg+xml"></object>
+		</div>
+		
+		<h1>How's the <span class="accent">weather</span>?</h1>
+	</header>
+	
+	<section>
+        <!-- this is a group of radio buttons --> 
+        <!-- that user can click to switch between different metrics -->
+		<div class="group">
+			<input type="radio" name="rb" id="temp_radio" />
+		    <label for="temp_radio">Temperature</label>
+		    <input type="radio" name="rb" id="humidity_radio" />
+		    <label for="humidity_radio">Humidity</label>
+		    <input type="radio" name="rb" id="pressure_radio" />
+		    <label for="pressure_radio">Pressure</label>
+		</div>
+		
+        <!-- a canvas that we will pass on to chart.js in our main script -->
+		<div class="chartContainer">
+			<canvas id="tempChart" width="50" height="550"></canvas>
+		</div>
+	</section>
+</body>
+</html>
+
